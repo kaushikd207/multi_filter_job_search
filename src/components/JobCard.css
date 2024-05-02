@@ -1,0 +1,10 @@
+.card {
+  padding: 21px;
+  width: 25%;
+  margin: 10px 40px;
+  border-radius: 35px;
+  border: 2px solid rgb(246 245 245);
+}
+button {
+  width: 100%;
+}

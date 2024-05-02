@@ -1,0 +1,12 @@
+.filterContainer {
+  display: flex;
+  height: 100px;
+  border: 1px solid red;
+}
+.dropDown {
+  width: 300px;
+  border: 1px solid black;
+}
+.MuiInputBase-root {
+  width: 300px !important;
+}
