@@ -1,12 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "../actions/jobList.slice";
 import JobCard from "./JobCard";
 import Filters from "./Filters";
+import "./JobListing.css";
 
 const JobListings = () => {
   const dispatch = useDispatch();
   const jobList = useSelector((state) => state?.jobList?.data?.jdList);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,7 +17,7 @@ const JobListings = () => {
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-      limit: 1000,
+      limit: 300,
       offset: 0,
     });
 
@@ -38,11 +40,9 @@ const JobListings = () => {
   };
   return (
     <>
-      <Filters />
+      <Filters jobList={jobList} />
       <div className="job-listings-container">
-        {jobList?.map((job) => (
-          <JobCard key={job.id} job={job} />
-        ))}
+        <JobCard />
       </div>
     </>
   );

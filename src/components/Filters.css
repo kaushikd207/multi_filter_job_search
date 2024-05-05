@@ -4,9 +4,9 @@
   border: 1px solid red;
 }
 .dropDown {
-  width: 300px;
+  width: 250px;
   border: 1px solid black;
 }
 .MuiInputBase-root {
-  width: 300px !important;
+  width: 245px !important;
 }

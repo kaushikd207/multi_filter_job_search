@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./JobCard.css";
-const JobCard = ({ job }) => {
-  return (
+import { useSelector } from "react-redux";
+const JobCard = () => {
+  const jobList = useSelector((state) => state?.jobList?.data?.jdList);
+  const job = useSelector((state) => state?.filerData?.data);
+  const [showData, setShowData] = useState(jobList);
+  jobList?.map((job) => (
     <div className="card">
       <h4>{`${job?.jobRole} Engineer`}</h4>
       <p>{job?.location}</p>
@@ -14,7 +18,7 @@ const JobCard = ({ job }) => {
       <button>Apply</button>
       <button>Unlock referral asks</button>
     </div>
-  );
+  ));
 };
 
 export default JobCard;
