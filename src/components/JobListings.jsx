@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "../actions/jobList.slice";
-import JobCard from "./JobCard";
 import Filters from "./Filters";
 import "./JobListing.css";
+import { setFilterData } from "../actions/filteredData.slice";
 
 const JobListings = () => {
   const dispatch = useDispatch();
@@ -34,6 +34,7 @@ const JobListings = () => {
       );
       const result = await response.json();
       dispatch(setData(result));
+      dispatch(setFilterData(result?.jdList));
     } catch (error) {
       dispatch(setData(error));
     }
@@ -41,9 +42,6 @@ const JobListings = () => {
   return (
     <>
       <Filters jobList={jobList} />
-      <div className="job-listings-container">
-        <JobCard />
-      </div>
     </>
   );
 };

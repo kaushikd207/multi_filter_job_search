@@ -1,10 +1,45 @@
 .card {
   padding: 21px;
-  width: 25%;
+  width: 21%;
   margin: 10px 40px;
   border-radius: 35px;
   border: 2px solid rgb(246 245 245);
 }
-button {
+.pill {
+  border: 1px solid #c7c7c7;
+  border-radius: 32px;
+  padding: 6px;
+  font-size: 11px;
+  width: 100px;
+}
+.logoContainer {
   width: 100%;
+  display: flex;
+}
+h5 {
+  color: grey;
+}
+img {
+  width: 29px;
+  height: 50px;
+}
+.content1 {
+  width: 15%;
+  padding-top: 26px;
+}
+button {
+  cursor: pointer;
+  width: 100%;
+  height: 44px;
+  width: 100%;
+  border: none;
+  margin: 5px;
+  border-radius: 9px;
+  font-weight: 600;
+  background: #4afffd;
+}
+.referBtn {
+  color: white;
+  font-weight: 600;
+  background: rgb(38, 0, 255);
 }
